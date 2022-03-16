@@ -1,3 +1,19 @@
-halil:
-  test:
-    key: succcess
+server:
+  port: 8501
+spring:
+  application:
+    name: account-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+eureka:
+  client:
+    serviceUrl:
+      defaultzone: http://localhost:8761/eureka/
