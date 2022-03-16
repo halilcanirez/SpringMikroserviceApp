@@ -10,3 +10,10 @@ services:
     environment:
       POSTGRES_PASSWORD: 123
 
+  elasticsearch:
+    image: elasticsearch:6.8.5
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      discovery.type: single-node
