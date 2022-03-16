@@ -33,7 +33,7 @@ public class AccountJpaAdapter implements AccountPersistencePort {
          accountJpaRepository.deleteById(id);
     }
 
-    @Override
+   /* @Override
     public List<AdvertisementOwnedByAccount> retrieveAdvertisementOwnedByAccount(Long accountId){
         return retrieveAccountById(accountId).getAdvertisement().stream()
                 .map(advertisementEntity -> {
@@ -44,7 +44,7 @@ public class AccountJpaAdapter implements AccountPersistencePort {
                     advertisementOwnedByAccount.setStatus(advertisementEntity.getAdvertisementStatus());
                     return advertisementOwnedByAccount;
                 }).collect(Collectors.toList());
-    }
+    }*/
 
     private AccountEntity retrieveAccountById(Long id){
         return accountJpaRepository.findById(id)

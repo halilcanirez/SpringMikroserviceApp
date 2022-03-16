@@ -10,5 +10,7 @@ public interface AccountPersistencePort {
     Account createAccount(Account account);
     Account retrieveAccount(Long id);
     void deleteAccount(Long id);
+/*
     List<AdvertisementOwnedByAccount> retrieveAdvertisementOwnedByAccount(Long accountId);
+*/
 }

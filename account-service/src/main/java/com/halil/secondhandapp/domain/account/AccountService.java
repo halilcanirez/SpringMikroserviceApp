@@ -26,7 +26,7 @@ public class AccountService {
         accountPersistencePort.deleteAccount(id);
     }
 
-    public List<AdvertisementOwnedByAccount> retrieveAdvertisementOwnedByAccount(Long accountId){
+    /*public List<AdvertisementOwnedByAccount> retrieveAdvertisementOwnedByAccount(Long accountId){
         return accountPersistencePort.retrieveAdvertisementOwnedByAccount(accountId);
-    }
+    }*/
 }

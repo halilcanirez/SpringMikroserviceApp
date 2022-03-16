@@ -1,6 +1,6 @@
 package com.halil.secondhandapp.domain.account;
 
-import com.halil.secondhandapp.adapter.jpa.advertisement.AdvertisementStatus;
+import com.halil.secondhandapp.adapter.jpa.AdvertisementStatus;
 import lombok.Getter;
 import lombok.Setter;
 

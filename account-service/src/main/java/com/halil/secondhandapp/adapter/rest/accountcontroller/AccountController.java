@@ -33,11 +33,11 @@ public class AccountController {
     public void deleteUser(Long id) {
         accountService.deleteUser(id);
     }
-
+    /* todo kullanıcıların yayınladığı advertisementleri getir
     @GetMapping("/my-advertisement/{id}")
     public List<AdvertisementResponse> retrieveAdvertisementOwnedByAccount(@PathVariable Long id){
         return accountService.retrieveAdvertisementOwnedByAccount(id).stream()
                 .map(AdvertisementResponse::convertToAdvertisementResponse)
                 .collect(Collectors.toList());
-    }
+    } */
 }

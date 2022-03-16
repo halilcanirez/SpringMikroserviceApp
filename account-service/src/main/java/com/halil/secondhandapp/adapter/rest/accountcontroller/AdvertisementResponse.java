@@ -1,6 +1,6 @@
 package com.halil.secondhandapp.adapter.rest.accountcontroller;
 
-import com.halil.secondhandapp.adapter.jpa.advertisement.AdvertisementStatus;
+import com.halil.secondhandapp.adapter.jpa.AdvertisementStatus;
 import com.halil.secondhandapp.domain.account.AdvertisementOwnedByAccount;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,12 +22,12 @@ public class AdvertisementResponse {
     @NotNull
     private AdvertisementStatus status;
 
-    public static AdvertisementResponse convertToAdvertisementResponse(AdvertisementOwnedByAccount ownedByAccount){
+   /* public static AdvertisementResponse convertToAdvertisementResponse(AdvertisementOwnedByAccount ownedByAccount){
         return builder()
                 .id(ownedByAccount.getId())
                 .advertisementName(ownedByAccount.getAdvertisementName())
                 .advertisementPrice(ownedByAccount.getAdvertisementPrice())
                 .status(ownedByAccount.getStatus())
                 .build();
-    }
+    }*/
 }

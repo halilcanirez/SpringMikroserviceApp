@@ -1,6 +1,5 @@
 package com.halil.secondhandapp.adapter.jpa.account;
 
-import com.halil.secondhandapp.advertisement.AdvertisementEntity;
 import com.halil.secondhandapp.adapter.jpa.communication.CommunicationInfoEntity;
 import com.halil.secondhandapp.domain.account.Account;
 import lombok.Getter;
@@ -34,8 +33,8 @@ public class AccountEntity {
     @OneToMany(fetch = FetchType.LAZY , mappedBy = "account")
     private Set<CommunicationInfoEntity> communicationInfos;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
-    private List<AdvertisementEntity> advertisement;
+    /*@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
+    private List<AdvertisementEntity> advertisement;*/
 
 
     public static AccountEntity convert_to_AccountEntity(Account account){
