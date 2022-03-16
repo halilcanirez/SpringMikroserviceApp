@@ -19,15 +19,15 @@ public class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false)
     private String mail;
-
+    @Column(nullable = false)
     private String firstNAme;
-
+    @Column(nullable = false)
     private String lastName;
-
+    @Column(nullable = false)
     private LocalDate birthDate;
-
+    @Column(nullable = false)
     private String passwd;
 
     @OneToMany(fetch = FetchType.LAZY , mappedBy = "account")
@@ -35,7 +35,6 @@ public class AccountEntity {
 
     /*@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
     private List<AdvertisementEntity> advertisement;*/
-
 
     public static AccountEntity convert_to_AccountEntity(Account account){
         AccountEntity entity = new AccountEntity();

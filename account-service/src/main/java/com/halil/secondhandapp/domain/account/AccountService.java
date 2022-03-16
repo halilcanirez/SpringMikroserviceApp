@@ -12,11 +12,9 @@ public class AccountService {
 
     private final AccountPersistencePort accountPersistencePort;
 
-
     public Account createUser(Account account) {
         return accountPersistencePort.createAccount(account);
     }
-
 
     public Account retrieveUser(Long id) {
         return accountPersistencePort.retrieveAccount(id);

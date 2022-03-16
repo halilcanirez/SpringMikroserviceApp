@@ -48,7 +48,6 @@ public class AccountJpaAdapter implements AccountPersistencePort {
 
     private AccountEntity retrieveAccountById(Long id){
         return accountJpaRepository.findById(id)
-                .map(a -> {return Optional.of(a).get();})
                 .orElseThrow(()-> new SecondhandDataNotFoundException(ExceptionType.ACCOUNT_DATA_NOT_FOUND));
     }
 }
