@@ -20,6 +20,7 @@
         <module>account-service</module>
         <module>advertisement-service</module>
         <module>service-parent</module>
+        <module>eureka-server</module>
     </modules>
 
     <groupId>com.halil</groupId>
