@@ -21,6 +21,8 @@
         <module>advertisement-service</module>
         <module>service-parent</module>
         <module>eureka-server</module>
+        <module>feign-client-service</module>
+        <module>notificatn-service</module>
     </modules>
 
     <groupId>com.halil</groupId>
