@@ -1,8 +1,6 @@
 package com.halil.secondhandapp.adapter.jpa.followedadvertisement;
 
 import com.halil.secondhandapp.adapter.jpa.advertisement.AdvertisementJpaRepository;
-import com.halil.secondhandapp.adapter.jpa.account.AccountEntity;
-import com.halil.secondhandapp.adapter.jpa.account.AccountJpaRepository;
 import com.halil.secondhandapp.adapter.jpa.advertisement.AdvertisementEntity;
 import com.halil.secondhandapp.domain.exception.ExceptionType;
 import com.halil.secondhandapp.domain.exception.SecondhandDataNotFoundException;
@@ -24,21 +22,23 @@ public class FollowedAdvertisementJpaAdapter implements FollowedAdvertisementPer
 
     private final FollowedAdvertisementJpaRepository followedAdvertisementJpaRepository;
     private final AdvertisementJpaRepository advertisementJpaRepository;
-    private final AccountJpaRepository accountJpaRepository;
+    //private final AccountJpaRepository accountJpaRepository;
     @Override
     public FollowedAdvertisementRetrieve createFollowedAdvertisement(FollowedAdvertisementCreate create) {
-        AccountEntity accountEntity= retrieveAccount(create.getAccountId());
+        /*AccountEntity accountEntity= retrieveAccount(create.getAccountId());
         AdvertisementEntity advertisementEntity=retrieveAdvertisementEntityById(create.getAdvertisementId());
         FollowedAdvertisementEntity entity=createFollowedAdvertisementEntity(accountEntity,advertisementEntity);
 
-        return followedAdvertisementJpaRepository.save(entity).convertToRetrieveModel();
+        return followedAdvertisementJpaRepository.save(entity).convertToRetrieveModel(); */
+        return null;
     }
 
     @Override
     public List<FollowedAdvertisementRetrieve> retrieveFollowedAdvertisementsByAccountId(Long accountId) {
-        return followedAdvertisementJpaRepository.findAllByAccount_Id(accountId).stream()
+        /*return followedAdvertisementJpaRepository.findAllByAccount_Id(accountId).stream()
                 .map(FollowedAdvertisementEntity::convertToRetrieveModel)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
+        return null;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class FollowedAdvertisementJpaAdapter implements FollowedAdvertisementPer
                 .orElseThrow(() -> new SecondhandDataNotFoundException(ExceptionType.ADVERTISEMENT_DATA_NOT_FOUND));
     }
 
-
+    /*
     private AccountEntity retrieveAccount(Long id) {
         return accountJpaRepository.findById(id)
                 .map(a -> {return Optional.of(a).get();})
@@ -64,5 +64,5 @@ public class FollowedAdvertisementJpaAdapter implements FollowedAdvertisementPer
         followedAdvertisementEntity.setAdvertisement(advertisementEntity);
         followedAdvertisementEntity.setCreatedDate(LocalDate.now());
         return followedAdvertisementEntity;
-    }
+    }*/
 }

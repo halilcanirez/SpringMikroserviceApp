@@ -11,17 +11,10 @@ import java.time.LocalDateTime;
 @Getter
 public class Advertisement {
     private Long id;
-
-    private Long accountId;
     private String name;
-
     private String detail;
-
     private LocalDate createdDate;
-
     private LocalDateTime updatedDate;
-
     private AdvertisementStatus advertisementStatus;
-
     private Double price;
 }

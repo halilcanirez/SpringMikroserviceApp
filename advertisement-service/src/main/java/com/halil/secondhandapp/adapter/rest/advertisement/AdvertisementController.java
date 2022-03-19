@@ -4,6 +4,8 @@ import com.halil.secondhandapp.adapter.jpa.advertisement.AdvertisementStatus;
 import com.halil.secondhandapp.domain.advertisement.AdvertisementService;
 import com.halil.secondhandapp.domain.advertisement.RetrievedAdvertisement;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,9 +28,14 @@ public class AdvertisementController {
         return AdvertisementResponse.convertToResponseModel(advertisement);
     }
 
-    @PostMapping("/advertisement/changeadvertisementstatus/{id}")
+    @PutMapping("/advertisement/{id}")
     public AdvertisementResponse updateAdvertisementStatus(@PathVariable Long id , @RequestParam AdvertisementStatus newStatus){
         RetrievedAdvertisement advertisement = advertisementService.updateAdvertisementStatus(newStatus,id);
         return AdvertisementResponse.convertToResponseModel(advertisement);
     }
+
+    /*@GetMapping("/advertisement")
+    public Page<AdvertisementResponse> getAll(Pageable pageable){
+
+    }*/
 }

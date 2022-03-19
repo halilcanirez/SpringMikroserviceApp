@@ -1,7 +1,6 @@
 package com.halil.secondhandapp.adapter.jpa.followedadvertisement;
 
 
-import com.halil.secondhandapp.adapter.jpa.account.AccountEntity;
 import com.halil.secondhandapp.adapter.jpa.advertisement.AdvertisementEntity;
 import com.halil.secondhandapp.domain.followedadvertisement.FollowedAdvertisementRetrieve;
 import lombok.Getter;
@@ -22,9 +21,9 @@ public class FollowedAdvertisementEntity {
 
     @ManyToOne
     private AdvertisementEntity advertisement;
-
+    /*
     @ManyToOne
-    private AccountEntity account;
+    private AccountEntity account; */
 
     @Column(nullable = false)
     private LocalDate createdDate;

@@ -1,7 +1,6 @@
 package com.halil.secondhandapp.adapter.jpa.advertisement;
 
-import com.halil.secondhandapp.account.AccountEntity;
-import com.halil.secondhandapp.account.AccountJpaRepository;
+
 import com.halil.secondhandapp.domain.advertisement.Advertisement;
 import com.halil.secondhandapp.domain.advertisement.RetrievedAdvertisement;
 import com.halil.secondhandapp.domain.exception.ExceptionType;
@@ -18,7 +17,6 @@ import java.util.Optional;
 public class AdvertisementJpaAdapter implements AdvertisementPersistencePort {
 
     private final AdvertisementJpaRepository advertisementJpaRepository;
-    private final AccountJpaRepository accountJpaRepository;
 
     @Override
     public RetrievedAdvertisement retrieve(Long id) {
@@ -27,11 +25,7 @@ public class AdvertisementJpaAdapter implements AdvertisementPersistencePort {
 
     @Override
     public RetrievedAdvertisement create(Advertisement advertisement) {
-        AccountEntity accountEntity = accountJpaRepository.findById(advertisement.getAccountId())
-                .map(a -> {return Optional.of(a).get();}
-                ).orElseThrow(() ->new SecondhandDataNotFoundException(ExceptionType.ACCOUNT_DATA_NOT_FOUND));
-
-        return advertisementJpaRepository.save(AdvertisementEntity.convertToEntity(advertisement,accountEntity))
+        return advertisementJpaRepository.save(AdvertisementEntity.convertToEntity(advertisement))
                 .convertToRetrievedAdvertisement();
     }
 

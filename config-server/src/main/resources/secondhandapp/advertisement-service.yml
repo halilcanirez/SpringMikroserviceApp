@@ -5,7 +5,7 @@ spring:
     name: advertisement-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/advertisementdatabase
+    url: jdbc:postgresql://localhost:5432/advertisementdb
     username: postgres
     password: 123
   jpa:

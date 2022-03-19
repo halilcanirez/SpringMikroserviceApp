@@ -1,7 +1,6 @@
 package com.halil.secondhandapp.adapter.jpa.advertisement;
 
 
-import com.halil.secondhandapp.account.AccountEntity;
 import com.halil.secondhandapp.domain.advertisement.Advertisement;
 import com.halil.secondhandapp.domain.advertisement.RetrievedAdvertisement;
 import lombok.Getter;
@@ -15,14 +14,11 @@ import java.time.LocalDateTime;
 @Setter
 @Table(name = "advertisement")
 @Entity(name = "advertisement")
-public class AdvertisementEntity {
+public class AdvertisementEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    private AccountEntity account;
 
     @Column(nullable = false)
     private String name;
@@ -45,7 +41,6 @@ public class AdvertisementEntity {
     public RetrievedAdvertisement convertToRetrievedAdvertisement(){
         return RetrievedAdvertisement.builder()
                 .id(id)
-                .account(account.convertToAccount())
                 .name(name)
                 .detail(detail)
                 .createdDate(createdDate)
@@ -56,10 +51,9 @@ public class AdvertisementEntity {
 
     }
 
-    public static AdvertisementEntity convertToEntity(Advertisement advertisement , AccountEntity accountEntity){
+    public static AdvertisementEntity convertToEntity(Advertisement advertisement){
         AdvertisementEntity entity = new AdvertisementEntity();
         entity.setName(advertisement.getName());
-        entity.setAccount(accountEntity);
         entity.setDetail(advertisement.getDetail());
         entity.setCreatedDate(LocalDate.now());
         entity.setUpdatedDate(LocalDateTime.now());
