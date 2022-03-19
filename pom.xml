@@ -23,11 +23,12 @@
         <module>eureka-server</module>
         <module>feign-client-service</module>
         <module>notificatn-service</module>
+        <module>zipkin-server</module>
     </modules>
 
     <groupId>com.halil</groupId>
     <artifactId>secondhandapp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>10.0.1</version>
     <name>secondhandapp</name>
     <description>secondhandapp</description>
 

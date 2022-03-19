@@ -10,14 +10,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.halil</groupId>
     <artifactId>account-service</artifactId>
+    <version>10.0.1</version>
+    <name>account-service</name>
+    <description>Account Service</description>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -36,11 +39,8 @@
         <dependency>
             <groupId>com.halil</groupId>
             <artifactId>feign-client-service</artifactId>
-            <version>${project.version}</version>
+            <version>10.0.1</version>
         </dependency>
-
-
-
     </dependencies>
 
 </project>

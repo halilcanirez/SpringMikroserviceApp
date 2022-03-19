@@ -13,6 +13,14 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
+  rabbitmq:
+    username: secondhand
+    password: secondhand
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: msqueue
 eureka:
   client:
     serviceUrl:

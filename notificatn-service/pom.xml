@@ -3,38 +3,39 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>secondhandapp</artifactId>
+        <artifactId>service-parent</artifactId>
         <groupId>com.halil</groupId>
         <version>10.0.1</version>
+        <relativePath>../service-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka-server</artifactId>
+    <groupId>com.halil</groupId>
+    <artifactId>notificatn-service</artifactId>
+    <version>10.0.1</version>
+    <name>notificatn-service</name>
+    <description>Notification Service</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <artifactId>spring-cloud-stream</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.halil</groupId>
+            <artifactId>feign-client-service</artifactId>
+            <version>10.0.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.0.1</version>
-        </dependency>
     </dependencies>
-
 
     <build>
         <plugins>
@@ -44,5 +45,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

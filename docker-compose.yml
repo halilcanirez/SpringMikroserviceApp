@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
 
-  db:
+  postgres:
     image: postgres
     restart: always
     ports:
@@ -10,10 +10,11 @@ services:
     environment:
       POSTGRES_PASSWORD: 123
 
-  elasticsearch:
-    image: elasticsearch:6.8.5
+  msmsrabbitmq:
+    image: rabbitmq:3-management
     ports:
-      - 9200:9200
-      - 9300:9300
+      - '5672:5672'
+      - '15672:15672'
     environment:
-      discovery.type: single-node
+      - RABBITMQ_DEFAULT_USER=secondhand
+      - RABBITMQ_DEFAULT_PASS=secondhand
