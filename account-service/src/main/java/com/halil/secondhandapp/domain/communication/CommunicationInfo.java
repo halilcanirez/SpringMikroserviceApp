@@ -8,13 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CommunicationInfo {
-
     private Long id;
-
     private CommunicationType communicationType;
-
     private String value;
-
     private Account account;
-
 }
