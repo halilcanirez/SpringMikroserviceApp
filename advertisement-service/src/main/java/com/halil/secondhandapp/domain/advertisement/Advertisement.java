@@ -17,4 +17,5 @@ public class Advertisement {
     private LocalDateTime updatedDate;
     private AdvertisementStatus advertisementStatus;
     private Double price;
+    private Long accountId;
 }

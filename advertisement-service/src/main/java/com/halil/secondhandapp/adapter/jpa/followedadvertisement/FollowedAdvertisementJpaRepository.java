@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface FollowedAdvertisementJpaRepository extends JpaRepository<FollowedAdvertisementEntity , Long> {
-
+        List<FollowedAdvertisementEntity> findAllByAccountId(Long ıd);
 }

@@ -21,13 +21,11 @@ public class FollowedAdvertisementEntity {
 
     @ManyToOne
     private AdvertisementEntity advertisement;
-    /*
-    @ManyToOne
-    private AccountEntity account; */
+
+    private Long accountId;
 
     @Column(nullable = false)
     private LocalDate createdDate;
-
 
    public FollowedAdvertisementRetrieve convertToRetrieveModel(){
        return FollowedAdvertisementRetrieve.builder()
