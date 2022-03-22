@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: account-service
+  zipkin:
+    base-url: ${ZIPKIN_SERVER_URL:http://localhost:9411}
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/postgres
