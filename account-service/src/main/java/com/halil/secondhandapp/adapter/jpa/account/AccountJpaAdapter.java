@@ -33,19 +33,6 @@ public class AccountJpaAdapter implements AccountPersistencePort {
          accountJpaRepository.deleteById(id);
     }
 
-   /* @Override
-    public List<AdvertisementOwnedByAccount> retrieveAdvertisementOwnedByAccount(Long accountId){
-        return retrieveAccountById(accountId).getAdvertisement().stream()
-                .map(advertisementEntity -> {
-                    AdvertisementOwnedByAccount advertisementOwnedByAccount = new AdvertisementOwnedByAccount();
-                    advertisementOwnedByAccount.setId(advertisementEntity.getId());
-                    advertisementOwnedByAccount.setAdvertisementName(advertisementEntity.getName());
-                    advertisementOwnedByAccount.setAdvertisementPrice(advertisementEntity.getPrice());
-                    advertisementOwnedByAccount.setStatus(advertisementEntity.getAdvertisementStatus());
-                    return advertisementOwnedByAccount;
-                }).collect(Collectors.toList());
-    }*/
-
     private AccountEntity retrieveAccountById(Long id){
         return accountJpaRepository.findById(id)
                 .orElseThrow(()-> new SecondhandDataNotFoundException(ExceptionType.ACCOUNT_DATA_NOT_FOUND));
