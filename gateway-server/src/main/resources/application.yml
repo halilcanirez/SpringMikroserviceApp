@@ -1,0 +1,45 @@
+server:
+  port: ${SERVER_PORT:8088}
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: lb://ACCOUNT-SERVICE
+          predicates:
+            - Path=/account/**
+          filters:
+            - RewritePath=/(?<segment>.*), /$\{segment}
+            - name: Hystrix
+              args:
+                name: account-service
+                fallbackUri: forward:/fb/account
+
+        - id: advertisement-service
+          uri: lb://ADVERTİSEMENT-SERVICE
+          predicates:
+            - Path=/advertisement/**
+          filters:
+            - RewritePath=/(?<segment>.*), /$\{segment}
+            - name: Hystrix
+              args:
+                name: advertisement-service
+                fallbackUri: forward:/fb/advertisement
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8500}/eureka/
+    register-with-eureka: false
+  instance:
+    preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

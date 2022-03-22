@@ -24,6 +24,8 @@
         <module>feign-client-service</module>
         <module>notificatn-service</module>
         <module>zipkin-server</module>
+        <module>hystrix-dashboard</module>
+        <module>gateway-server</module>
     </modules>
 
     <groupId>com.halil</groupId>
