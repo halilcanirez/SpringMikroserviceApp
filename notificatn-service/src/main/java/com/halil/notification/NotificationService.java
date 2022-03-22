@@ -7,7 +7,7 @@ import org.springframework.cloud.stream.messaging.Sink;
 
 @EnableBinding(Sink.class)
 public class NotificationService {
-    @StreamListener
+    @StreamListener(Sink.INPUT)
     public void onNotification(AdvertisementNotification advertisementNotification){
         System.out.println("notification alındı");
     }
