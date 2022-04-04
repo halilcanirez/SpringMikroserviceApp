@@ -1,4 +1,5 @@
 # SpringMikroserviceApp
+A Secondhand Shopping Website with Microservices Architecture with backend on Java Spring Boot. The objective of my project was to learn about microservices architecture and various design patterns such as circuit breaker, learn how to communication between microservices.
 
 # Tech
 * Spring Cloud
